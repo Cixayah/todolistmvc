@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express();
 
+const port = 3000;
 app.get("/home", (req, res) => {
-  res.send("Hello World");
+  res.send("Hello World!");
 });
 
-const server = app.listen(3000, () => {
-  console.log("Server ativo na porta 3000");
+const server = app.listen(port, () => {
+  console.log(`Servidor rodando em http://localhost:${port}`);
 });
