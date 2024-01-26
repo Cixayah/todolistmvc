@@ -6,6 +6,6 @@ app.get("/home", (req, res) => {
   res.send("Hello World!");
 });
 
-const server = app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
-});
+const server = app.listen(port, () =>
+  console.log(`Servidor rodando em http://localhost:${port}`)
+);
