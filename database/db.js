@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const connectToDb = () => {
   mongoose
     .connect(
-//STRING DE CONEXÃO DO BANCO
+//string de conexão
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
