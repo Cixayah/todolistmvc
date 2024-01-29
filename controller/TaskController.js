@@ -3,7 +3,7 @@ const Task = require("../models/Task");
 const getAllTasks = async (req, res) => {
   try {
     const tasksList = await Task.find();
-    return res.render("index", { tasksList, task: null });
+    return res.render("index", { tasksList, task: null, taskDelete: null });
   } catch (err) {
     res.status(500).send({ error: err.massage });
   }
@@ -24,14 +24,43 @@ const createTask = async (req, res) => {
 };
 
 const getById = async (req, res) => {
-  const task = await Task.findOne({ _id: req.params.id });
-  const tasksList = await Task.find();
+  try {
+    const tasksList = await Task.find();
+    if (req.params.method == "update") {
+      const task = await Task.findOne({ _id: req.params.id });
+      res.render("index", { task, taskDelete: null, tasksList });
+    } else {
+      const taskDelete = await Task.findOne({ _id: req.params.id });
+      res.render("index", { task: null, taskDelete, tasksList });
+    }
+  } catch (err) {
+    res.status(500).send({ error: err.massage });
+  }
+};
 
-  res.render("index", { task, tasksList });
+const updateOneTask = async (req, res) => {
+  try {
+    const task = req.body;
+    await Task.updateOne({ _id: req.params.id }, task);
+    res.redirect("/");
+  } catch (err) {
+    res.status(500).send({ error: err.massage });
+  }
+};
+
+const deleteOneTask = async (req, res) => {
+  try {
+    await Task.deleteOne({ _id: req.params.id });
+    res.redirect("/")
+  } catch (err) {
+    res.status(500).send({ error: err.massage });
+  }
 };
 
 module.exports = {
   getAllTasks,
   createTask,
   getById,
+  updateOneTask,
+  deleteOneTask,
 };

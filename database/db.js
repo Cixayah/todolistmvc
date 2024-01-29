@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const connectToDb = () => {
   mongoose
     .connect(
-//string de conexão
+//Conexão com mongodb,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
