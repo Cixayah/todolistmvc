@@ -42,11 +42,11 @@
           <span>Criado em <%= task.date.toLocaleDateString('pt-BR') %></span>
         </div>
 
-        <div>
-          <a href="/getById/<%= task._id %>/update"
+        <div id="vector">
+          <a class="btnUpdate" href="/getById/<%= task._id %>/update"
             ><i class="bi bi-pencil-square"></i
           ></a>
-          <a href="/getById/<%= task._id %>/delete"
+          <a class="btnDelete" href="/getById/<%= task._id %>/delete"
             ><i class="bi bi-trash"></i
           ></a>
         </div>
@@ -57,12 +57,16 @@
   <% if(taskDelete != null) {%>
   <section id="modal">
     <div id="card">
-      <a href="/">x</a>
-      <h2>Confirmação</h2>
+      <div id="headPopup">
+        <h2>Confirmação</h2>
+        <a href="/" id="closePopup"><i class="bi bi-x-lg"></i></a>
+      </div>
       <hr />
       <p>Deseja realmente apagar a tarefa: <%= taskDelete.task %>?</p>
-      <a href="/">Não</a>
-      <a href="/deleteOne/<%= taskDelete._id %>">Sim</a>
+      <div id="btns">
+        <a id="btnNot" href="/">Não</a>
+        <a id="btnYes" href="/deleteOne/<%= taskDelete._id %>">Sim</a>
+      </div>
     </div>
   </section>
   <% } %>

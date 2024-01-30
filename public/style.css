@@ -81,6 +81,7 @@ ul li a {
   text-decoration: none;
   color: var(--littleWhite);
 }
+
 ul li span {
   color: var(--littleWhite);
   font-style: italic;
@@ -92,11 +93,102 @@ ul li div {
   align-items: center;
   flex-wrap: wrap;
 }
-
+/* Estilos para itens de lista em posições ímpares (zebrado) */
 ul li:nth-child(odd) {
   background-color: var(--littleBlack);
-  /* Seleciona e estiliza itens de lista em posições ímpares dentro de listas não ordenadas, isso cria um padrão de estilo alternado para itens em posições ímpares (zebrado)*/
 }
-ul li:hover{
+ul li:hover {
   background: #5a5a5a;
+}
+a.btnUpdate {
+  padding: 0.3rem 1rem;
+  text-decoration: none;
+  color: var(--littleWhite);
+  transition: all 0.3 ease-in-out;
+}
+.btnUpdate:hover {
+  color: green;
+}
+.btnDelete:hover {
+  color: red;
+}
+section#modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000000c9;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+}
+div#card {
+  width: 30rem;
+  position: relative;
+  background-color: var(--littleBlack);
+}
+div#headPopup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+div#card h2 {
+  padding: .5rem;
+}
+div#card a#closePopup {
+  color: var(--littleWhite);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+div#card a#closePopup:hover {
+  color: red;
+}
+div#card hr {
+  width: 90%;
+  margin: 0 auto;
+  border-color: #5a4a9c;
+}
+div#card p {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+div#btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+div#btns a {
+  text-decoration: none;
+  padding: 0.5rem;
+  width: 7rem;
+  text-align: center;
+  background-color: var(--littleBlack);
+  font-size: 1rem;
+}
+div#btns a#btnNot {
+  color: red;
+  border: solid 1px red;
+  margin-right: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+div#btns a#btnNot:hover {
+  background-color: red;
+  color: var(--littleWhite);
+}
+div#btns a#btnYes {
+  color: green;
+  border: solid 1px green;
+  transition: all 0.3s ease-in-out;
+}
+div#btns a#btnYes:hover {
+  background-color: green;
+  color: var(--littleWhite);
 }
