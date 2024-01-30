@@ -102,7 +102,7 @@ ul li:hover {
   background: #5a5a5a;
 }
 #vector a {
-  margin-right: 1rem /* Adicione a margem desejada entre os ícones */
+  margin-right: 1rem; /* Adicione a margem desejada entre os ícones */
 }
 a.btnUpdate {
   padding: 0.3rem;
@@ -232,8 +232,7 @@ ul li.check-true {
   text-decoration: line-through;
 }
 
-
-ul li a.check-true::before{
+ul li a.check-true::before {
   content: "";
   position: absolute;
   border: green solid;
@@ -245,7 +244,7 @@ ul li a.check-true::before{
   transform: rotate(45deg);
 }
 
-ul li a.check-false::before{
+ul li a.check-false::before {
   content: "";
   position: absolute;
   border: var(--littleWhite) solid;

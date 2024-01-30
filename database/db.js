@@ -2,13 +2,10 @@ const mongoose = require("mongoose");
 
 const connectToDb = () => {
   mongoose
-    .connect(
-,
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    )
+    .connect(process.env.DB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
     .then(() => console.log("mongodb Atlas CONECTADO!"))
     .catch((err) => console.log(err));
 };
