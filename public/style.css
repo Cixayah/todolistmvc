@@ -254,17 +254,3 @@ ul li a.check-false::before {
   width: 13px;
   border-width: 2px;
 }
-footer {
-  text-align: center;
-  color: #fff;
-  margin-top: 20px;
-}
-
-.footer-link {
-  color: #fff;
-  text-decoration: none;
-}
-
-.purple-text {
-  color: purple;
-}
