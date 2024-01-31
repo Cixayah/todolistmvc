@@ -1,4 +1,3 @@
-cat <<EOF > README.md
 # Projeto To-Do List MVC
 
 Bem-vindo ao projeto To-Do List MVC! Este é um aplicativo de lista de tarefas simples, construído em Node.js com MongoDB para armazenamento no banco de dados.
